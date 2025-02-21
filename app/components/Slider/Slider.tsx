@@ -70,8 +70,8 @@ const AnimatedImage = ({
         alt={`Slide ${index + 1}`}
         fill
         style={{ objectFit: "contain" }}
-        className={`transition-all duration-[800ms] ease-out transform ${
-          isVisible ? " translate-x-0" : " translate-x-[-100%]"
+        className={`transition-all duration-[1300ms] ease-out transform ${
+          isVisible ? " translate-x-0" : " translate-x-[-130%]"
         }`}
       />
       <h2

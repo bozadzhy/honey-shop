@@ -29,8 +29,11 @@ export default function Header() {
         <Link href="/products" className="hover:text-gray-300">
           Our Products
         </Link>
-        <Link href="/" className="hover:text-gray-300 bg-black/40 rounded-full px-4">
-      Bee Farm
+        <Link
+          href="/"
+          className="hover:text-gray-300 bg-black/40 rounded-full px-4"
+        >
+          Bee Farm
         </Link>
         <Link href="/cart" className="hover:text-gray-300">
           Cart
