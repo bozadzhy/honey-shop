@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Barlow } from "next/font/google";
 import "./globals.css";
 import Footer from "@/app/components/Footer/Footer";
+import Header from "./components/Header/Header";
 
 const barlow = Barlow({
   subsets: ["latin"],
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={barlow.className}>
+        <Header/>
         {children}
         <Footer />
       </body>

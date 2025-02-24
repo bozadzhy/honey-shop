@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FC } from "react";
 
 interface Props {
+  id: string;
   imageUrl: string;
   title: string;
   description: string;
@@ -15,9 +16,9 @@ interface Props {
   isAddedToCart?: boolean;
 }
 
-const ProductCard: FC<Props> = ({ imageUrl, title, description, price }) => {
+const ProductCard: FC<Props> = ({ imageUrl, title, description, price, id }) => {
   return (
-    <div className="bg-white rounded-2xl shadow-lg p-4 max-w-sm transition-transform hover:scale-105">
+    <div id={id} className="bg-white rounded-2xl p-4 max-w-sm transition-transform hover:scale-105">
       <div className="relative w-full h-56">
         <Image
           src={imageUrl}

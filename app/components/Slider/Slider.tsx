@@ -71,7 +71,9 @@ const AnimatedImage = ({
         fill
         style={{ objectFit: "contain" }}
         className={`transition-all duration-[1300ms] ease-out transform ${
-          isVisible ? " translate-x-0" : " translate-x-[-130%]"
+          isVisible
+            ? "opacity-100 translate-x-0"
+            : "opacity-0 translate-x-[-130%]"
         }`}
       />
       <h2
