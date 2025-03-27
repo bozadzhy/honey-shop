@@ -5,7 +5,7 @@ import { CreditCard, Truck, CheckCircle } from "lucide-react";
 
 export default function PaymentDelivery() {
   return (
-    <Container className="py-10 mt-16 h-[calc(100vh-113px)]">
+    <Container className="py-10 mt-16">
       <h1 className="text-3xl font-bold text-center mb-6">Оплата та доставка</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Оплата */}

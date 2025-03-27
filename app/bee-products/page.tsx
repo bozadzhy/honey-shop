@@ -36,7 +36,7 @@ const beeProducts = [
 
 export default function BeeProducts() {
   return (
-    <Container className="py-10 mt-16 h-[calc(100vh-113px)]">
+    <Container className="py-10 mt-16">
       <h1 className="text-3xl font-bold text-center mb-6">Продукти бджільництва</h1>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">

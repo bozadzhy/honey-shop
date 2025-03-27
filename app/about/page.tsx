@@ -1,11 +1,9 @@
-"use client";
-
 import Container from "../components/Container/Container";
 import Image from "next/image";
 
 export default function About() {
   return (
-    <Container className="py-10 mt-16 h-[calc(100vh-112px)]">
+    <Container className="py-10 mt-16">
       <h1 className="text-3xl font-bold text-center mb-6">Про нас</h1>
       <div className="flex flex-col md:flex-row gap-8 items-center">
         <div className="flex-shrink-0">
@@ -37,6 +35,25 @@ export default function About() {
           </p>
         </div>
       </div>
+
+      {/* Correct YouTube Embed */}
+      <div className="flex justify-center aspect-w-16 aspect-h-9 m-6">
+        <iframe
+          width="560px"
+          height="315px"
+          src="https://www.youtube.com/embed/Y9QbaErV7Bg"
+          title="About Us - Bee Farm"
+          frameBorder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+
+      <p>
+        Наш мед виготовляється з любов'ю та турботою про кожен продукт.
+        Ознайомтесь з нашою історією та процесом виготовлення меду в цьому
+        відео.
+      </p>
     </Container>
   );
 }
