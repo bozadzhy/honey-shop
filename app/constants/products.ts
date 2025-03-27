@@ -7,6 +7,7 @@ export const products = [
     title: "Лесной мёд",
     description: "Ароматный и полезный мёд из горного региона",
     price: 1200,
+    quantity: 1,
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const products = [
     title: "Фацелія мёд",
     description: "Собранный с полевых цветов, обладает нежным вкусом",
     price: 1400,
+    quantity: 1,
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ export const products = [
     title: "Лесной мёд",
     description: "Обладает выраженным ароматом липы и лечебными свойствами",
     price: 1600,
+    quantity: 1,
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ export const products = [
     title: "Лесной мёд",
     description: "Темный и насыщенный, богат железом и антиоксидантами",
     price: 1500,
+    quantity: 1,
   },
   {
     id: 5,
@@ -43,6 +47,7 @@ export const products = [
     title: "Лесной мёд",
     description: "Светлый, прозрачный, долго не кристаллизуется",
     price: 1700,
+    quantity: 1,
   },
   {
     id: 6,
@@ -53,6 +58,7 @@ export const products = [
     title: "Акация мёд",
     description: "Обладает насыщенным вкусом и содержит много полезных веществ",
     price: 1800,
+    quantity: 1,
   },
   {
     id: 7,
@@ -62,6 +68,7 @@ export const products = [
     title: "Акация мёд",
     description: "Собранный на высокогорных лугах, обладает уникальным вкусом",
     price: 1900,
+    quantity: 1,
   },
   {
     id: 8,
@@ -71,6 +78,7 @@ export const products = [
     title: "Подсолнечный мёд",
     description: "Смесь нектара различных луговых трав, полезен для иммунитета",
     price: 1750,
+    quantity: 1,
   },
   {
     id: 9,
@@ -81,6 +89,7 @@ export const products = [
     title: "Подсолнечный мёд",
     description: "Ярко-желтого цвета, быстро кристаллизуется, богат витаминами",
     price: 1300,
+    quantity: 1,
   },
   {
     id: 10,
@@ -90,5 +99,6 @@ export const products = [
     title: "Фацелія мёд",
     description: "Собран с полевых цветов, имеет насыщенный сладкий вкус",
     price: 1450,
+    quantity: 1,
   },
 ];

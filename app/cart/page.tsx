@@ -1,11 +1,16 @@
-import { FC } from 'react';
+import { FC } from "react";
+import Cart from "../components/Cart/Cart";
 
 interface CartProps {
-  
-} 
+  className?: string;
+}
 
-const Cart: FC<CartProps> = ({  }) => {
-  return <div className='mt-56'>Cart</div>;
+const CartPage: FC<CartProps> = ({ className }) => {
+  return (
+    <div className={className}>
+     <Cart/>
+    </div>
+  );
 };
 
-export default Cart;
+export default CartPage;

@@ -9,10 +9,9 @@ import { products } from "@/app/constants/products";
 
 export default function Slider() {
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full h-screen mt-16">
       <Swiper
-        modules={[Navigation, Autoplay]}
-        // navigation
+        modules={[Autoplay]}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
         speed={1000}
         loop

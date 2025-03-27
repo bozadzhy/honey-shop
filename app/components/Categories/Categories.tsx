@@ -4,6 +4,7 @@ import React, { FC } from "react";
 import { useCategoryStore } from "@/store/category";
 import { categories } from "@/app/constants/categories";
 import { cn } from "@/lib/utils";
+import Container from "../Container/Container";
 
 interface Props {
   className?: string;
@@ -13,8 +14,9 @@ const Categories: FC<Props> = ({ className }) => {
   const categoryActiveId = useCategoryStore((state) => state.activeId);
 
   return (
+    <Container>
     <div
-      className={cn("flex flex-col w-fit gap-1 p-1 rounded-2xl", className)}
+      className={cn("flex gap-1 p-1 rounded-2xl bg-white shadow-md backdrop-blur-md", className)}
     >
       {categories.map(({ id, name }, index) => (
         <a
@@ -30,6 +32,7 @@ const Categories: FC<Props> = ({ className }) => {
         </a>
       ))}
     </div>
+    </Container>
   );
 };
 

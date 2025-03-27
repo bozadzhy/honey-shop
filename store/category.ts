@@ -1,4 +1,4 @@
-import { create } from "zustand"; // стейт менеджер для категорий (при скроле изменять категорию).  если нужно чтото по сложнее используй ртк квери
+import { create } from "zustand";
 interface State {
   activeId: number;
   setActiveId: (activeId: number) => void;

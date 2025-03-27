@@ -20,7 +20,7 @@ const Products: FC<ProductsProps> = ({ className, categoryId, title }) => {
   const intersection = useIntersection(
     intersectionRef as RefObject<HTMLElement>,
     {
-      threshold: 0.8,
+      threshold: 0.9,
     }
   );
 
@@ -49,7 +49,8 @@ const Products: FC<ProductsProps> = ({ className, categoryId, title }) => {
                       <ProductCard
                         key={product.id}
                         {...product}
-                        id={String(product.categoryId)}
+                        categoryId={product.categoryId}
+                        id={product.id}
                       />
                     )
                 )}

@@ -3,20 +3,16 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Categories from "../Categories/Categories";
-import { useCategoryStore } from "@/store/category";
-import {
-  AlignJustify,
-  AlignLeft,
-  Search,
-  ShoppingCart,
-  UserIcon,
-} from "lucide-react";
+import { AlignLeft, Search, ShoppingCart, UserIcon } from "lucide-react";
 import Container from "./../Container/Container";
 import Image from "next/image";
+import { useCartStore } from "@/store/cart";
+import { useSideBarStore } from "@/store/sidebar";
 
 export default function Header() {
+  const toggleSidebar = useSideBarStore((state) => state.toggleSidebar);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { activeId } = useCategoryStore((state) => state);
+  const { cartItems } = useCartStore((state) => state);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,13 +34,13 @@ export default function Header() {
       <Container>
         <nav className="flex justify-between space-x-6 ">
           <div>
-            <Link
-              href="/menu"
+            <button
+              onClick={toggleSidebar}
               className="flex items-center transition-transform hover:scale-105"
             >
               <AlignLeft />
               <span>Menu</span>
-            </Link>
+            </button>
           </div>
           <div>
             <Link
@@ -63,25 +59,31 @@ export default function Header() {
           <div className="flex">
             <Link
               href="/cart"
-              className=" px-2 transition-transform hover:scale-105"
+              className=" px-2 transition-transform hover:scale-105 flex"
             >
               <ShoppingCart />
+              {cartItems.length > 0 && (
+                <span className="text-primary font-bold">
+                  {cartItems.length}
+                </span>
+              )}
             </Link>
             <Link
-              href="/profile"
+              href="/"
               className=" px-2 transition-transform hover:scale-105"
             >
               <Search />
             </Link>
             <Link
-              href="/profile"
+              href="/login"
               className="px-2 transition-transform hover:scale-105"
             >
               <UserIcon />
             </Link>
           </div>
         </nav>
-        <div
+        {/* <div
+        className="fixed top-16 left-0 w-full p-4 "
           className={`fixed top-16 left-0 w-full p-4 
     transition-all duration-700 ease-in-out transform
     ${
@@ -90,8 +92,8 @@ export default function Header() {
         : "opacity-0 -translate-x-60 pointer-events-none"
     }`}
         >
-          <Categories className="bg-white/40 shadow-md backdrop-blur-md" />
-        </div>
+          <Categories />
+        </div> */}
       </Container>
     </header>
   );
