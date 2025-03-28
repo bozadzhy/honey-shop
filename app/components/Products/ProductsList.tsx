@@ -1,10 +1,11 @@
 "use client";
-import { FC, Fragment, useEffect, useRef, RefObject } from "react";
+import { FC, Fragment, useEffect, useRef, RefObject, useState } from "react";
 import ProductCard from "../ProductCard/ProductCard";
 import { products } from "@/app/constants/products";
 import Container from "../Container/Container";
 import { useIntersection } from "react-use"; //useIntersection=> хук для отлавливания скрола. еще можно использовать для оптимизации и подзагрузки с бека
 import { useCategoryStore } from "@/store/category";
+import HoneyCategories from "../HoneyCategories/HoneyCategories";
 
 interface ProductsProps {
   className?: string;
@@ -14,6 +15,16 @@ interface ProductsProps {
 
 const Products: FC<ProductsProps> = ({ className, categoryId, title }) => {
   const setActiveCategoryId = useCategoryStore((state) => state.setActiveId);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const intersectionRef = useRef<HTMLDivElement | null>(null);
 
@@ -33,6 +44,17 @@ const Products: FC<ProductsProps> = ({ className, categoryId, title }) => {
   return (
     <div ref={intersectionRef} id={title}>
       <Container className={className}>
+        <div
+          className={`fixed z-40 top-[4.2rem] left-0 w-full
+    transition-all duration-700 ease-in-out transform
+    ${
+      isScrolled
+        ? "opacity-100 translate-y-0"
+        : "opacity-0 -translate-y-60 pointer-events-none"
+    }`}
+        >
+          <HoneyCategories />
+        </div>
         <div>
           <div className="flex flex-col">
             <Fragment>

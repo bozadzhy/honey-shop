@@ -1,4 +1,4 @@
-export const categories = [
+export const honeyCategories = [
   { id: 1, name: "Лісовий" },
   { id: 2, name: "Акація" },
   { id: 3, name: "Сонячний" },

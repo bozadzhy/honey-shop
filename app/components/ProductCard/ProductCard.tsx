@@ -50,10 +50,10 @@ const ProductCard: FC<Props> = ({
           />
         </div>
         <h3 className="text-lg font-semibold mt-4">{title}</h3>
-        <p className="text-gray-600 text-sm mt-2">{description}</p>{" "}
+        <p className="text-amber-900 text-sm mt-2">{description}</p>{" "}
       </Link>
       <div className="flex justify-between items-center mt-4">
-        <span className="text-xl font-bold text-yellow-600">{price} $</span>
+        <span className="text-xl font-bold text-amber-900">{price} $</span>
 
         <button
           onClick={() => handleClick(id)}

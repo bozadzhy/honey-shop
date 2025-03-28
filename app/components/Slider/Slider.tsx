@@ -9,7 +9,7 @@ import { products } from "@/app/constants/products";
 
 export default function Slider() {
   return (
-    <div className="relative w-full h-screen mt-16">
+    <div className="relative w-full h-[720px] border-b border-gray-100 mb-4">
       <Swiper
         modules={[Autoplay]}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
@@ -21,14 +21,14 @@ export default function Slider() {
         {products.map(
           ({ imageBackground, imageUrl, title, description }, index) => (
             <SwiperSlide key={index}>
-              <div className="relative w-full h-[75vh]">
+              <div className="relative w-full h-[600px]">
                 <Image
                   src={imageBackground}
                   alt={`Slide ${index + 1}`}
                   fill
                   priority
                   style={{ objectFit: "cover" }}
-                  className="h-full w-full"
+                  className="w-full"
                 />
               </div>
               <AnimatedImage
@@ -63,7 +63,7 @@ const AnimatedImage = ({
   }, [index]);
 
   return (
-    <div className="absolute left-32 bottom-24 w-96 h-96 flex items-center justify-center">
+    <div className="absolute left-32 bottom-0 w-96 h-96 flex items-center justify-center">
       <Image
         src={imageUrl}
         alt={`Slide ${index + 1}`}
